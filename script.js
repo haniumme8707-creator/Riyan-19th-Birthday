@@ -174,3 +174,12 @@ document.getElementById("letterPopup").classList.remove("show");
 document.body.style.overflow = "auto";
 
 }
+function playMusic() {
+    const music = document.getElementById("bgMusic");
+
+    music.currentTime = 9;
+
+    music.play().catch(() => {
+        console.log("Music will play after user interaction.");
+    });
+}
