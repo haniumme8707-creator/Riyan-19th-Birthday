@@ -183,3 +183,17 @@ function playMusic() {
         console.log("Music will play after user interaction.");
     });
 }
+const music = document.getElementById("bgMusic");
+const video = document.querySelector("#memories video");
+
+video.addEventListener("play", () => {
+    music.pause();
+});
+
+video.addEventListener("pause", () => {
+    music.play();
+});
+
+video.addEventListener("ended", () => {
+    music.play();
+});
