@@ -1115,3 +1115,31 @@ button:hover,
     }
 
 }
+/* MOON VIDEO */
+
+.moon-video{
+    padding:100px 20px;
+    text-align:center;
+}
+
+.moon-video h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:48px;
+    color:#f7d9a4;
+    margin-bottom:15px;
+}
+
+.moon-text{
+    max-width:700px;
+    margin:0 auto 35px;
+    font-size:18px;
+    opacity:.85;
+    line-height:1.8;
+}
+
+.moon-video video{
+    width:100%;
+    max-width:750px;
+    border-radius:22px;
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+}
