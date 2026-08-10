@@ -1,138 +1,169 @@
 /* ===============================
-   LETTER PAGE
+   GOLDEN LETTER PAGE
 =============================== */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+body {
+    margin: 0;
+    padding: 55px 18px 70px;
 
-body{
+    min-height: 100vh;
 
-    background:linear-gradient(
-        180deg,
-        #FFF9F5,
-        #F8EFE8,
-        #FDF8F4
-    );
+    /* Same warm golden feeling */
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(255, 226, 170, 0.32),
+            transparent 45%
+        ),
+        linear-gradient(
+            180deg,
+            #2b2118 0%,
+            #3a2b1d 45%,
+            #241b14 100%
+        );
 
-    font-family:'Poppins',sans-serif;
+    color: #f8ead5;
 
-    min-height:100vh;
+    font-family: 'Poppins', sans-serif;
 
-    overflow-x:hidden;
-
-    padding:60px 20px;
-
-}
-
-
-/* ===============================
-   CENTER
-=============================== */
-
-.letter-container{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
+    overflow-x: hidden;
 }
 
 
 /* ===============================
-   PAPER
+   MAIN PAGE
 =============================== */
 
-.letter-paper{
+.letter-page {
+    width: 100%;
+    max-width: 850px;
 
-    width:100%;
+    margin: 0 auto;
 
-    max-width:780px;
+    position: relative;
 
-    background:#FFFBF8;
+    z-index: 2;
+}
 
-    border-radius:24px;
 
-    padding:60px;
+/* ===============================
+   HEADING
+=============================== */
+
+.letter-heading {
+    text-align: center;
+
+    margin-bottom: 32px;
+
+    position: relative;
+
+    z-index: 3;
+}
+
+.letter-heading p {
+    margin: 0 0 8px;
+
+    font-size: 34px;
+}
+
+.letter-heading h1 {
+    margin: 0;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(42px, 7vw, 68px);
+
+    font-weight: 600;
+
+    line-height: 1.05;
+
+    color: #f4d7a2;
+
+    text-shadow:
+        0 3px 15px rgba(0, 0, 0, 0.35);
+}
+
+
+/* ===============================
+   LETTER PAPER
+=============================== */
+
+.letter-paper {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 760px;
+
+    margin: 0 auto;
+
+    padding: 65px 55px 60px;
+
+    box-sizing: border-box;
+
+    background:
+        linear-gradient(
+            rgba(255, 250, 238, 0.96),
+            rgba(248, 235, 211, 0.96)
+        );
+
+    border-radius: 8px 12px 10px 6px;
+
+    border: 1px solid rgba(191, 151, 94, 0.45);
 
     box-shadow:
-    0 20px 50px rgba(0,0,0,.08);
+        0 25px 60px rgba(0, 0, 0, 0.45),
+        inset 0 0 35px rgba(150, 108, 55, 0.08);
 
-    border:1px solid #F0E2D6;
+    color: #49372a;
 
-    animation:paperAppear .8s ease;
+    z-index: 3;
 
+    animation: paperAppear 0.8s ease-out;
+}
+
+
+/* Subtle paper edge */
+
+.letter-paper::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 8px;
+
+    border: 1px solid rgba(180, 135, 75, 0.18);
+
+    border-radius: 6px;
+
+    pointer-events: none;
 }
 
 
 /* ===============================
-   EMOJI
+   LETTER CONTENT
 =============================== */
 
-.emoji{
+.letter-content {
 
-    font-size:50px;
+    position: relative;
 
-    text-align:center;
+    z-index: 2;
 
+    font-family: 'Caveat', cursive;
+
+    font-size: clamp(25px, 4vw, 32px);
+
+    line-height: 1.65;
+
+    color: #49372a;
 }
 
+.letter-content p {
 
-/* ===============================
-   TITLE
-=============================== */
-
-h1{
-
-    text-align:center;
-
-    margin-top:15px;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:46px;
-
-    color:#7B5A46;
-
-}
-
-
-/* ===============================
-   SMALL TEXT
-=============================== */
-
-.small-text{
-
-    text-align:center;
-
-    margin:15px 0 40px;
-
-    color:#9A8574;
-
-    font-size:15px;
-
-}
-
-
-/* ===============================
-   LETTER
-=============================== */
-
-.letter{
-
-    font-family:'Caveat',cursive;
-
-    font-size:33px;
-
-    line-height:1.9;
-
-    color:#4E4037;
-
-    white-space:pre-line;
+    margin: 0 0 24px;
 
 }
 
@@ -141,54 +172,115 @@ h1{
    SIGNATURE
 =============================== */
 
-.signature{
+.signature {
 
-    margin-top:60px;
+    margin-top: 55px;
 
-    text-align:right;
+    text-align: right;
 
-    font-family:'Caveat',cursive;
+    font-family: 'Caveat', cursive;
 
-    font-size:34px;
+    font-size: clamp(30px, 5vw, 42px);
 
-    color:#6D5243;
+    line-height: 1.15;
+
+    color: #74543e;
 
 }
 
 
 /* ===============================
-   BUTTON
+   BACK BUTTON
 =============================== */
 
-.back-btn{
+.back-button {
 
-    display:inline-block;
+    display: block;
 
-    margin-top:45px;
+    width: fit-content;
 
-    text-decoration:none;
+    margin: 28px auto 0;
 
-    color:white;
+    padding: 12px 24px;
 
-    background:#C8A27D;
+    color: #f4d7a2;
 
-    padding:14px 30px;
+    text-decoration: none;
 
-    border-radius:50px;
+    font-family: 'Poppins', sans-serif;
 
-    transition:.3s;
+    font-size: 15px;
 
-    font-weight:500;
+    border: 1px solid rgba(244, 215, 162, 0.45);
+
+    border-radius: 30px;
+
+    transition: 0.3s ease;
+
+}
+
+.back-button:hover {
+
+    background: rgba(244, 215, 162, 0.12);
+
+    transform: translateY(-2px);
 
 }
 
-.back-btn:hover{
 
-    background:#B88C63;
+/* ===============================
+   PAPER ENTRY
+=============================== */
 
-    transform:translateY(-3px);
+@keyframes paperAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 
 }
+
+
+/* ===============================
+   MOBILE
+=============================== */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 35px 12px 55px;
+    }
+
+    .letter-heading {
+        margin-bottom: 25px;
+    }
+
+    .letter-heading p {
+        font-size: 28px;
+    }
+
+    .letter-paper {
+        padding: 48px 28px 45px;
+    }
+
+    .letter-content {
+        font-size: 27px;
+        line-height: 1.6;
+    }
+
+    .signature {
+        margin-top: 45px;
+    }
+
+}
+}
+
 
 
 /* ===============================
