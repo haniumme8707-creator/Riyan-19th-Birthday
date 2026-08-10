@@ -197,7 +197,6 @@ video.addEventListener("pause", () => {
 video.addEventListener("ended", () => {
     music.play();
 });
-<script>
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -256,5 +255,3 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
 });
-
-</script>
