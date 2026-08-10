@@ -197,3 +197,64 @@ video.addEventListener("pause", () => {
 video.addEventListener("ended", () => {
     music.play();
 });
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* ===============================
+       PERSONAL VIDEO + BACKGROUND MUSIC
+       =============================== */
+
+    const personalVideo = document.getElementById("personalVideo");
+    const bgMusic = document.getElementById("bgMusic");
+
+    if (personalVideo) {
+
+        personalVideo.addEventListener("play", function () {
+
+            if (bgMusic) {
+                bgMusic.pause();
+            }
+
+        });
+
+        personalVideo.addEventListener("ended", function () {
+
+            if (bgMusic) {
+                bgMusic.play().catch(function () {
+                    console.log("Background music could not autoplay.");
+                });
+            }
+
+        });
+
+    }
+
+
+    /* ===============================
+       FINAL SURPRISE BUTTON
+       =============================== */
+
+    window.openFinalSurprise = function () {
+
+        const finalSurprise =
+            document.getElementById("final-surprise");
+
+        if (finalSurprise) {
+
+            finalSurprise.classList.add("opened");
+
+            setTimeout(function () {
+
+                window.location.href =
+                    "Pages/letter-19.html";
+
+            }, 1800);
+
+        }
+
+    };
+
+});
+
+</script>
