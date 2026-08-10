@@ -1143,3 +1143,294 @@ button:hover,
     border-radius:22px;
     box-shadow:0 20px 60px rgba(0,0,0,.35);
 }
+/* =========================================
+   FINAL SURPRISE
+   ========================================= */
+
+.final-surprise {
+    position: relative;
+    min-height: 75vh;
+    margin-top: 50px;
+    padding: 80px 20px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(255, 225, 150, 0.18),
+            transparent 45%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(20, 15, 10, 0.15),
+            rgba(0, 0, 0, 0.35)
+        );
+
+    border-radius: 25px;
+
+    opacity: 0;
+    transform: translateY(25px);
+
+    animation: finalAppear 2s ease forwards;
+}
+
+
+/* Moon */
+
+.moon {
+    font-size: 95px;
+
+    margin-bottom: 25px;
+
+    filter:
+        drop-shadow(0 0 12px rgba(255, 230, 170, 0.8))
+        drop-shadow(0 0 30px rgba(255, 215, 130, 0.5));
+
+    animation:
+        moonFloat 4s ease-in-out infinite,
+        moonGlow 2.5s ease-in-out infinite alternate;
+}
+
+
+/* Heading */
+
+.final-surprise h2 {
+    margin: 10px 0 18px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(30px, 7vw, 52px);
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    text-shadow:
+        0 0 10px rgba(255, 230, 170, 0.4);
+}
+
+
+/* Text */
+
+.final-surprise p {
+    max-width: 500px;
+
+    margin: 0 auto 35px;
+
+    font-family: "Caveat", cursive;
+
+    font-size: clamp(23px, 5vw, 30px);
+
+    line-height: 1.5;
+}
+
+
+/* Button */
+
+.final-surprise button {
+    position: relative;
+
+    padding: 14px 28px;
+
+    border: 1px solid rgba(255, 220, 160, 0.7);
+
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    color: inherit;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(8px);
+
+    box-shadow:
+        0 0 15px rgba(255, 220, 160, 0.2);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.final-surprise button:hover {
+    transform: scale(1.06);
+
+    background: rgba(255, 255, 255, 0.14);
+
+    box-shadow:
+        0 0 25px rgba(255, 220, 160, 0.45);
+}
+
+
+/* =========================================
+   FLOATING HEARTS
+   ========================================= */
+
+.final-surprise::before,
+.final-surprise::after {
+    content: "💕";
+
+    position: absolute;
+
+    font-size: 24px;
+
+    opacity: 0.7;
+
+    animation: floatingHeart 6s ease-in-out infinite;
+}
+
+
+.final-surprise::before {
+    left: 12%;
+    bottom: 10%;
+
+    animation-delay: 1s;
+}
+
+
+.final-surprise::after {
+    right: 12%;
+    bottom: 15%;
+
+    content: "💗";
+
+    animation-delay: 3s;
+}
+
+
+/* =========================================
+   ANIMATIONS
+   ========================================= */
+
+@keyframes finalAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes moonFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+}
+
+
+@keyframes moonGlow {
+
+    from {
+        filter:
+            drop-shadow(0 0 10px rgba(255, 230, 170, 0.6));
+    }
+
+    to {
+        filter:
+            drop-shadow(0 0 25px rgba(255, 230, 170, 0.95))
+            drop-shadow(0 0 45px rgba(255, 215, 130, 0.45));
+    }
+
+}
+
+
+@keyframes floatingHeart {
+
+    0% {
+        transform: translateY(20px) scale(0.8);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: translateY(-70px) scale(1);
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: translateY(-150px) scale(0.7);
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================================
+   BUTTON CLICK EFFECT
+   ========================================= */
+
+.final-surprise.opened {
+    animation: finalExit 1.5s ease forwards;
+}
+
+
+@keyframes finalExit {
+
+    to {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .final-surprise {
+        min-height: 70vh;
+        padding: 60px 18px;
+    }
+
+    .moon {
+        font-size: 75px;
+    }
+
+    .final-surprise h2 {
+        font-size: 32px;
+    }
+
+    .final-surprise p {
+        font-size: 23px;
+    }
+
+    .final-surprise button {
+        padding: 13px 22px;
+        font-size: 13px;
+    }
+
+   }
